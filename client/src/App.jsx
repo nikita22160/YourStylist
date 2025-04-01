@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import MainPage from "./pages/MainPage.jsx";
 
 function App() {
     const [message, setMessage] = useState('');
@@ -10,10 +12,11 @@ function App() {
     }, []);
 
     return (
-        <div>
-            <h1>React + Express</h1>
-            <p>{message}</p>
-        </div>
+        <Router>
+            <Routes>
+                <Route path="/" element={<MainPage />} />
+            </Routes>
+        </Router>
     );
 }
 
